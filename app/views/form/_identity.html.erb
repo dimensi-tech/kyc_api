@@ -1,0 +1,87 @@
+<%= form_for(@identity, url: form_post_identity_path,
+                        remote: true, method: 'post', html: { class: 'animated fadeInRight faster' }) do |f| %>
+  <h3>ID card</h3>
+  <div class="form-row">
+    <label>NIK</label>
+    <%= f.number_field :nik, class: 'form-control', required: true %>
+  </div>
+  <div class="form-row">
+    <label>Nama</label>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-row input-half">
+    <div>
+      <label>Tempat lahir</label>
+      <%= f.text_field :birth_place, class: 'form-control' %>
+    </div>
+    <div>
+      <label>Tanggal lahir</label>
+      <%= f.text_field :birth_date,
+                       value: @identity.birth_date ? @identity.birth_date.strftime('%d/%m/%Y') : '',
+                       class: 'form-control birth_date', placeholder: 'Contoh: 25/05/1997',
+                       data: { mask: '00/00/0000'} %>
+    </div>
+  </div>
+  <div class="form-row">
+    <label>Jenis Kelamin</label>
+    <%= f.select :gender, options_for_select([[''], 'LAKI-LAKI', 'PEREMPUAN'], @identity.gender), class: 'form-control' %>
+  </div>
+  <div class="form-row">
+    <label>Alamat</label>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>
+  <div class="form-row input-half">
+    <div>
+      <label>Provinsi</label>
+      <%= f.collection_select :province_id, Province.all, :id, :name,
+          { prompt: 'Pilih Provinsi' },
+          { id: 'select-province', data: { id: @identity.province_id,
+                                           city: @identity.city_id,
+                                           district: @identity.district_id,
+                                           urban_village: @identity.urban_village_id } } %>
+    </div>
+    <div>
+      <label>Kota</label>
+      <%= f.select :city_id, '', { prompt: 'Pilih Kota' }, id: 'select-city' %>
+    </div>
+  </div>
+  <div class="form-row input-half">
+    <div>
+      <label>Kecamatan</label>
+      <%= f.select :district_id, '', { prompt: 'Pilih Kecamatan' }, id: 'select-district' %>
+    </div>
+    <div>
+      <label>Kelurahan/Desa</label>
+      <%= f.select :urban_village_id, '', { prompt: 'Pilih Kelurahan/Desa' }, id: 'select-urban-village' %>
+    </div>
+  </div>
+  <div class="form-row input-half">
+    <div>
+      <label>RT</label>
+      <%= f.number_field :rt, class: 'form-control', min: 1, data: { mask: '00' } %>
+    </div>
+    <div>
+      <label>RW</label>
+      <%= f.number_field :rw, class: 'form-control', min: 1, data: { mask: '00' } %>
+    </div>
+  </div>
+  <div class="form-row">
+    <label>Agama</label>
+    <%= f.text_field :religion, class: 'form-control' %>
+  </div>
+  <div class="form-row">
+    <label>Status Perkawinan</label>
+    <%= f.text_field :martial_status, class: 'form-control' %>
+  </div>
+  <div class="form-row">
+    <label>Pekerjaan</label>
+    <%= f.text_field :occupation, class: 'form-control' %>
+  </div>
+  <div class="form-row">
+    <label>Kewarganegaraan</label>
+    <%= f.select :nationality, options_for_select(['WNI', 'WNA'], @identity.nationality), class: 'form-control' %>
+  </div>
+  <button>Submit</button>
+<% end %>
+
+<%= javascript_include_tag 'identity' %>
