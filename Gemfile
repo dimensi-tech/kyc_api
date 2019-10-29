@@ -10,9 +10,15 @@ gem 'sass-rails', '~> 5'
 gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'dotenv-rails', '2.7.5' #.env configuration
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capistrano', '~> 3.10'
+  gem 'capistrano-bundler', '~> 1.4'
+  gem 'capistrano-rails', '~> 1.4', require: false
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano3-puma', '~> 3.1.1'
 end
 
 group :development do
