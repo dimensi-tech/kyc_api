@@ -26,7 +26,7 @@ $(document).ready(function() {
       select_city.load(function(callback) {
         xhr && xhr.abort()
         xhr = $.ajax({
-          url: 'http://localhost:3000/locations/'+ currentProvince +'/cities.json',
+          url: $('body').attr('data-host')+ currentProvince +'/cities.json',
           success: function(results) {
             select_city.enable()
             callback(results)
@@ -56,7 +56,7 @@ $(document).ready(function() {
       select_district.load(function(callback) {
         xhr && xhr.abort()
         xhr = $.ajax({
-          url: 'http://localhost:3000/locations/'+ currentCity +'/districts.json',
+          url: $('body').attr('data-host') + currentCity +'/districts.json',
           success: function(results) {
             select_district.enable()
             callback(results)
@@ -83,7 +83,7 @@ $(document).ready(function() {
       select_urban_village.load(function(callback) {
         xhr && xhr.abort()
         xhr = $.ajax({
-          url: 'http://localhost:3000/locations/'+ currentDistrict +'/urban_villages.json',
+          url: $('body').attr('data-host') + currentDistrict +'/urban_villages.json',
           success: function(results) {
             select_urban_village.enable()
             callback(results)
