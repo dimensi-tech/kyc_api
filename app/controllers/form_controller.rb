@@ -25,13 +25,17 @@ class FormController < ApplicationController
   private
 
   def identity_params
-    params.require(:identity).permit(:nik, :name, :birth_date, :birth_place, :gender,
-                                     :address, :province_id, :city_id, :district_id, :urban_village_id,
-                                     :rt, :rw, :religion, :martial_status, :occupation, :nationality)
+    params.require(:identity).permit(
+      :nik, :name, :birth_date, :birth_place, :gender, :address, :province_id,
+      :city_id, :district_id, :urban_village_id, :rt, :rw, :religion, :martial_status,
+      :occupation, :nationality, :image
+    )
   end
 
   def passport_params
-    params.require(:passport).permit(:full_name, :birth_place, :mother_name, :father_name, :number,
-                                     :expired_date, :released_date, :birth_date, :identity_id)
+    params.require(:passport).permit(
+      :full_name, :birth_place, :mother_name, :father_name, :number, :expired_date,
+      :released_date, :birth_date, :identity_id, :image
+    )
   end
 end
