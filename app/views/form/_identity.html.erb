@@ -81,6 +81,10 @@
     <label>Kewarganegaraan</label>
     <%= f.select :nationality, options_for_select(['WNI', 'WNA'], @identity.nationality), class: 'form-control' %>
   </div>
+  <div class="form-row">
+    <label>Photo KTP</label>
+    <%= f.file_field :image, accept: 'application/pdf', class: 'form-control' %>
+  </div>
   <button>Submit</button>
 <% end %>
 
