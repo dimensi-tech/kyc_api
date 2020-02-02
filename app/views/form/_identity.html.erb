@@ -28,7 +28,7 @@
   </div>
   <div class="form-row">
     <label>Alamat</label>
-    <%= f.text_field :address, class: 'form-control' %>
+    <%= f.text_area :address, class: 'form-control' %>
   </div>
   <div class="form-row input-half">
     <div>
@@ -67,11 +67,11 @@
   </div>
   <div class="form-row">
     <label>Agama</label>
-    <%= f.text_field :religion, class: 'form-control' %>
+    <%= f.select :religion, Identity::RELIGION, { include_blank: true }%>
   </div>
   <div class="form-row">
     <label>Status Perkawinan</label>
-    <%= f.text_field :martial_status, class: 'form-control' %>
+    <%= f.select :religion, Identity::MARTIAL, { include_blank: true }%>
   </div>
   <div class="form-row">
     <label>Pekerjaan</label>
