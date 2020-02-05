@@ -67,6 +67,7 @@ body {
   }
   textarea {
     resize: none;
+    height: auto !important;
   }
   :focus {
     outline: none;
@@ -79,7 +80,7 @@ body {
     background: linear-gradient(to right, rgba(38,50,56,0.9), rgba(38,50,56,0.9)), image-url('patterns.jpeg');
   }
   .inner {
-    min-width: 861px;
+    min-width: 1200px;
     transform: translateX(47px);
     transition: all 0.5s ease;
     margin: auto;
@@ -92,6 +93,7 @@ body {
     position: relative;
     #form-holder {
       overflow: hidden;
+      width: 63.88%;
     }
   }
   .banner-holder {
