@@ -1,4 +1,4 @@
-window.history.pushState('passport', 'Form Passport', '?identity_id=<%= @identity.nik %>');
+window.history.pushState('passport', 'Form Passport', '?referrer=<%= @referrer %>&identity_id=<%= @identity.nik %>');
 $('html, body').animate({ scrollTop: 0 }, 'slow')
 $('#form-holder > form').addClass('animated fadeOutLeft fast')
 setTimeout(function(){

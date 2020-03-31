@@ -10,9 +10,9 @@
       </div>
       <div id='form-holder'>
         <% if params[:identity_id].present? %>
-          <%= render 'passport', locals: { passport: @passport } %>
+          <%= render 'passport', locals: { passport: @passport, referrer: @referrer } %>
         <% else %>
-          <%= render 'identity', locals: { identity: @identity } %>
+          <%= render 'identity', locals: { identity: @identity, referrer: @referrer } %>
         <% end %>
       </div>
     </div>

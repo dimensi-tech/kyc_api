@@ -5,6 +5,7 @@ class FormController < ApplicationController
   end
 
   def post_identity
+    @referrer = params[:referrer]
     @identity = Identity.new(identity_params)
     if @identity.save
       @passport = @identity.passports.build
@@ -17,6 +18,7 @@ class FormController < ApplicationController
     @passport = Passport.new(passport_params)
     if @passport.save
       @success = true
+      redirect_to params[:referrer] + "?identity_callback=#{@passport.identity_id}"
     else
       @success = false
     end

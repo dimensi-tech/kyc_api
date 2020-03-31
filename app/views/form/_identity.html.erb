@@ -1,4 +1,4 @@
-<%= form_for(@identity, url: form_post_identity_path,
+<%= form_for(@identity, url: form_post_identity_path(referrer: params[:referrer]),
                         remote: true, method: 'post', html: { class: 'animated fadeInRight faster' }) do |f| %>
   <h3>ID card</h3>
   <div class="form-row">
