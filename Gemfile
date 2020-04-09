@@ -37,6 +37,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'active_model_serializers'
+gem 'bootstrap-datepicker-rails', '~> 1.9', '>= 1.9.0.1'
+gem 'bootstrap3-rails'
 gem 'animate-rails'
 gem 'global'
 gem 'jquery_mask_rails', '~> 0.1.0'

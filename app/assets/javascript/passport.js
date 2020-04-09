@@ -1,6 +1,10 @@
 $(document).ready(function() {
   // Form input mask
-  $('input[name="passport[birth_date]"], input[name="passport[released_date]"], input[name="passport[expired_date]"]').mask('00/00/0000')
+  // $('input[name="passport[birth_date]"], input[name="passport[released_date]"], input[name="passport[expired_date]"]').mask('00/00/0000')
+  $('.datepicker').datepicker({
+    format: "dd/mm/yyyy",
+    autoclose: true
+  });
 
   // Form validation rules
   $("#new_passport").validate({

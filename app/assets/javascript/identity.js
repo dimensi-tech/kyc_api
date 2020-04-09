@@ -115,7 +115,10 @@ $(document).ready(function() {
   $('#select-province')[0].selectize.trigger('change')
 
   // Form input mask
-  $('input[name="identity[birth_date]"]').mask('00/00/0000')
+  $('.datepicker').datepicker({
+    format: "dd/mm/yyyy",
+    autoclose: true
+  });
   $('input[name="identity[rw]"], input[name="identity[rt]"]').mask('000')
 
   // Form validation
