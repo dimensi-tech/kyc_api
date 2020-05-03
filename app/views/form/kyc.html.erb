@@ -9,7 +9,7 @@
         </div>
       </div>
       <div id='form-holder'>
-        <% if params[:identity_id].present? %>
+        <% if params[:identity_id].present? || params[:passport_only] %>
           <%= render 'passport', locals: { passport: @passport, referrer: @referrer } %>
         <% else %>
           <%= render 'identity', locals: { identity: @identity, referrer: @referrer } %>
