@@ -1,4 +1,8 @@
-<%= form_for(@passport, url: form_post_passport_path(referrer: params[:referrer]), method: 'post', html: { class: 'animated fadeInRight faster' }) do |f| %>
+<%= form_for(@passport, url: form_post_passport_path(referrer: params[:referrer],
+                                                     passport_only: params[:passport_only].present?
+                                                    ),
+                        method: 'post',
+                        html: { class: 'animated fadeInRight faster' }) do |f| %>
   <%= f.hidden_field :identity_id %>
   <h3>Passport</h3>
   <% if params[:passport_only].blank? %>
