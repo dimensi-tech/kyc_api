@@ -16,9 +16,10 @@ class FormController < ApplicationController
 
   def post_passport
     @passport = Passport.new(passport_params)
+    callback_id = params.dig(:passport_only) ? @passport.id : @passport.identity_id
     if @passport.save
       @success = true
-      redirect_to params[:referrer] + "?identity_callback=#{@passport.identity_id}"
+      redirect_to params[:referrer] + "?identity_callback=#{callback_id}"
     else
       @success = false
     end
