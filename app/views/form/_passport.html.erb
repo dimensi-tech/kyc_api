@@ -32,6 +32,10 @@
                        autocomplete: "off" %>
     </div>
   </div>
+    <div class="form-row">
+    <label>Jenis Kelamin</label>
+    <%= f.select :gender, options_for_select([[''], 'LAKI-LAKI', 'PEREMPUAN'], @passport.gender), class: 'form-control' %>
+  </div>
   <div class="form-row">
     <label>Nama Ibu</label>
     <%= f.text_field :mother_name, class: 'form-control' %>

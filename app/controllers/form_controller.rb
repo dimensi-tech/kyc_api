@@ -38,7 +38,7 @@ class FormController < ApplicationController
   def passport_params
     params.require(:passport).permit(
       :full_name, :birth_place, :mother_name, :father_name, :number, :expired_date,
-      :released_date, :birth_date, :identity_id, :image
+      :released_date, :birth_date, :identity_id, :image, :gender
     )
   end
 end
